@@ -1,0 +1,524 @@
+strict digraph "" {
+	graph [label="Qualitative model",
+		normalize=True,
+		overlap=False,
+		sep=0.5,
+		smoothing=avg_dist,
+		splines=True
+	];
+	"Inflow: [0, 0]
+Volume: [0, 0]
+Outflow: [0, 0]" -> "Inflow: [0, +]
+Volume: [0, 0]
+Outflow: [0, 0]";
+	"Inflow: [0, +]
+Volume: [0, 0]
+Outflow: [0, 0]" -> "Inflow: [0, 0]
+Volume: [0, 0]
+Outflow: [0, 0]";
+	"Inflow: [0, +]
+Volume: [0, 0]
+Outflow: [0, 0]" -> "Inflow: [+, -]
+Volume: [0, +]
+Outflow: [0, +]";
+	"Inflow: [0, +]
+Volume: [0, 0]
+Outflow: [0, 0]" -> "Inflow: [+, 0]
+Volume: [0, +]
+Outflow: [0, +]";
+	"Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [0, 0]
+Volume: [0, 0]
+Outflow: [0, 0]";
+	"Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [0, +]
+Volume: [0, 0]
+Outflow: [0, 0]";
+	"Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [0, 0]
+Volume: [0, 0]
+Outflow: [0, 0]";
+	"Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [0, +]
+Volume: [0, 0]
+Outflow: [0, 0]";
+	"Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, -]
+Volume: [0, +]
+Outflow: [0, +]";
+	"Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, 0]
+Volume: [0, +]
+Outflow: [0, +]";
+	"Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [0, 0]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [0, 0]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [0, 0]
+Volume: [max, 0]
+Outflow: [max, 0]" -> "Inflow: [0, +]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [0, +]
+Volume: [max, 0]
+Outflow: [max, 0]" -> "Inflow: [0, 0]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [0, +]
+Volume: [max, 0]
+Outflow: [max, 0]" -> "Inflow: [+, -]
+Volume: [max, -]
+Outflow: [max, -]";
+	"Inflow: [0, +]
+Volume: [max, 0]
+Outflow: [max, 0]" -> "Inflow: [+, -]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [0, +]
+Volume: [max, 0]
+Outflow: [max, 0]" -> "Inflow: [+, 0]
+Volume: [max, -]
+Outflow: [max, -]";
+	"Inflow: [0, +]
+Volume: [max, 0]
+Outflow: [max, 0]" -> "Inflow: [+, 0]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [+, -]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [+, -]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, -]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [+, -]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, 0]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, 0]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [+, 0]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, 0]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, 0]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [+, 0]
+Volume: [0, +]
+Outflow: [0, +]" -> "Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [0, 0]
+Volume: [0, 0]
+Outflow: [0, 0]";
+	"Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [0, +]
+Volume: [0, 0]
+Outflow: [0, 0]";
+	"Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, -]
+Volume: [0, +]
+Outflow: [0, +]";
+	"Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, 0]
+Volume: [0, +]
+Outflow: [0, +]";
+	"Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]" -> "Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]" -> "Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]" -> "Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [0, 0]
+Volume: [max, -]
+Outflow: [max, -]";
+	"Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [0, 0]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [0, +]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [0, +]
+Volume: [max, -]
+Outflow: [max, -]";
+	"Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [+, -]
+Volume: [max, -]
+Outflow: [max, -]";
+	"Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [+, -]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [+, 0]
+Volume: [max, -]
+Outflow: [max, -]";
+	"Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [+, 0]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, -]
+Volume: [0, +]
+Outflow: [0, +]";
+	"Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, 0]
+Volume: [0, +]
+Outflow: [0, +]";
+	"Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]" -> "Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]" -> "Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [+, -]
+Volume: [max, -]
+Outflow: [max, -]";
+	"Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [+, -]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [+, 0]
+Volume: [max, -]
+Outflow: [max, -]";
+	"Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]" -> "Inflow: [+, 0]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [0, +]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [0, +]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [0, +]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [0, +]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [0, +]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [0, +]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [0, +]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [0, +]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, -]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [0, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [+, -]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, -]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, -]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [+, -]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, -]
+Volume: [max, 0]
+Outflow: [max, 0]" -> "Inflow: [0, 0]
+Volume: [max, -]
+Outflow: [max, -]";
+	"Inflow: [+, -]
+Volume: [max, 0]
+Outflow: [max, 0]" -> "Inflow: [0, 0]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [+, -]
+Volume: [max, 0]
+Outflow: [max, 0]" -> "Inflow: [0, +]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [+, -]
+Volume: [max, 0]
+Outflow: [max, 0]" -> "Inflow: [0, +]
+Volume: [max, -]
+Outflow: [max, -]";
+	"Inflow: [+, -]
+Volume: [max, 0]
+Outflow: [max, 0]" -> "Inflow: [+, 0]
+Volume: [max, 0]
+Outflow: [max, 0]";
+	"Inflow: [+, 0]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, 0]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [+, 0]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, 0]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"Inflow: [+, 0]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"Inflow: [+, 0]
+Volume: [max, -]
+Outflow: [max, -]" -> "Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]";
+	"Inflow: [+, 0]
+Volume: [max, 0]
+Outflow: [max, 0]" -> "Inflow: [+, -]
+Volume: [max, 0]
+Outflow: [max, 0]";
+}

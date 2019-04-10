@@ -325,6 +325,6 @@ def create_state_transition_graph(states, state_transitions):
         representation_2 = get_state_representation(state_2)
         graph.add_edge(representation_1, representation_2)
 
-    graph.write('./graph.dot')
-    graph.draw('./graph.svg', prog='fdp')
-    graph.draw('./graph.png', prog='fdp')
+    graph.write('./Output/graph.dot')
+    graph.draw('./Output/graph.svg', prog='fdp')
+    graph.draw('./Output/graph.png', prog='fdp')

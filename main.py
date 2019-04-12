@@ -1,7 +1,3 @@
-from itertools import product
-
-import pygraphviz as pgv
-
 from utils import *
 
 # Step 1: (Over)generate states
@@ -13,11 +9,7 @@ print(f'Step 1: (Over)generated {states_len} states in total!')
 sort_states(states)
 
 # Step 2: Remove any invalid states
-debug_states = [
-    ('0', '0', '0', '0', '0', '0'),
-    ('0', '+', '0', '0', '0', '0'),
-    ('+', '0', '0', '+', '0', '+'),
-]
+debug_states = []
 
 valid_states = [state for state in states if is_valid_state(state, debug_states)]
 valid_states_len = len(valid_states)
@@ -32,19 +24,7 @@ transitions_len = len(state_transitions)
 print(f'Step 3: (Over)generated {transitions_len} state transitions in total!')
 
 # Step 4: Remove any invalid state-transitions
-debug_state_transitions = [
-    (('0', '0', '0', '0', '0', '0'), ('0', '+', '0', '0', '0', '0'),),
-    (('0', '0', '0', '0', '0', '0'), ('0', '+', '0', '0', '0', '0'),),
-    (('0', '+', '0', '0', '0', '0'), ('+', '0', '0', '+', '0', '+'),),
-    (('+', '0', '0', '+', '0', '+'), ('+', '0', '+', '+', '+', '+'),),
-    (('+', '0', '0', '+', '0', '+'), ('+', '0', '+', '0', '+', '0'),),
-    (('+', '0', '+', '+', '+', '+'), ('+', '0', '+', '+', '+', '+'),),
-    (('+', '0', '+', '+', '+', '+'), ('+', '-', '+', '+', '+', '+'),),
-    (('+', '0', '+', '+', '+', '+'), ('+', '0', 'max', '0', 'max', '0'),),
-    (('+', '-', '+', '+', '+', '+'), ('+', '-', '+', '+', '+', '+'),),
-    (('+', '-', '+', '+', '+', '+'), ('+', '-', 'max', '0', 'max', '0'),),
-    (('+', '0', '0', '+', '0', '+'), ('+', '-', '0', '+', '0', '+'),)
-]
+debug_state_transitions = []
 
 valid_state_transitions = [state_transition for state_transition in state_transitions if is_valid_transition(state_transition, debug_state_transitions)]
 valid_transitions_len = len(valid_state_transitions)

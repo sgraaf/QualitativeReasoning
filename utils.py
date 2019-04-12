@@ -306,152 +306,6 @@ def is_valid_transition(state_transition, debug_state_transitions):
     return True
 
 
-def old_is_valid_transition(state_transition, debug_state_transitions):
-    """
-    Determine if a given state transition is valid or not, given the dependencies and assumptions.
-
-    :param state_transition: a possible state transition
-    :returns: true if valid, false otherwise
-    """
-    state_1, state_2 = state_transition
-
-    debug = False
-    if state_transition in debug_state_transitions:
-        debug = True
-
-    # gradients of the inflow
-    if state_1[1] == '0':  # 0 inflow gradient state_1
-        if state_1[0] != state_2[0]:  # inequal inflows state_1-state_2
-            if debug:
-                print(f'Invalid state transition (0 inflow gradient): {state_1} --> {state_2}')
-            return False
-    
-    # gradients of the volume
-    if state_1[3] == '-':  # negative volume gradient state_1
-        if state_1[2] == '+':  # positive volume state_1
-            if state_2[2] == 'max':  # max volume state_1
-                if debug:
-                    print(f'Invalid state transition (negative volume gradient, positive volume): {state_1} --> {state_2}')
-                return False
-        elif state_1[2] == 'max':  # max volume state_1
-            if state_2[2] != '+':  # no positive volume state_2
-                if debug:
-                    print(f'Invalid state transition (negative volume gradient, max volume): {state_1} --> {state_2}')
-                return False
-    elif state_1[3] == '0':  # 0 volume gradient state_1
-        if state_1[2] != state_2[2]:  # inequal volumes state_1-state_2
-            if debug:
-                print(f'Invalid state transition (0 volume gradient): {state_1} --> {state_2}')
-            return False
-    elif state_1[3] == '+':  # positive volume gradient state_1
-        if state_1[2] == '0':  # 0 volume state_1
-            if state_2[2] != '+':  # no positive state_1
-                if debug:
-                    print(f'Invalid state transition (positive volume gradient, 0 volume): {state_1} --> {state_2}')
-                return False
-        elif state_1[2] == '+':  # positive volume state_1
-            if state_2[2] == '0':  # 0 volume state_2
-                if debug:
-                    print(f'Invalid state transition (positive volume gradient, positive volume): {state_1} --> {state_2}')
-                return False
-
-    # gradients of the outflow
-    if state_1[5] == '-':  # negative outflow gradient state_1
-        if state_1[4] == '+':  # positive outflow state_1
-            if state_2[4] == 'max':  # max outflow state_1
-                if debug:
-                    print(f'Invalid state transition (negative outflow gradient, positive outflow): {state_1} --> {state_2}')
-                return False
-        elif state_1[4] == 'max':  # max outflow state_1
-            if state_2[4] != '+':  # ni positive outflow state_2
-                if debug:
-                    print(f'Invalid state transition (negative outflow gradient, max outflow): {state_1} --> {state_2}')
-                return False
-    elif state_1[5] == '0':  # 0 outflow gradient state_1
-        if state_1[4] != state_2[4]:  # inequal outflows state_1-state_2
-            if debug:
-                    print(f'Invalid state transition (0 outflow gradient): {state_1} --> {state_2}')
-            return False
-    elif state_1[5] == '+':  # positive outflow gradient state_1
-        if state_1[4] == '0':  # 0 outflow state_1
-            if state_2[4] != '+':  # no positive outflow state_1
-                if debug:
-                    print(f'Invalid state transition (positive outflow gradient, 0 outflow): {state_1} --> {state_2}')
-                return False
-        elif state_1[4] == '+':  # positive outflow state_1
-            if state_2[4] == '0':  # 0 outflow state_2
-                if debug:
-                    print(f'Invalid state transition (positive outflow gradient, positive outflow): {state_1} --> {state_2}')
-                return False
-
-    # equal magnitudes
-    if state_1[0:-1:2] == state_2[0:-1:2]:
-        if state_1[3] != state_2[3]:
-            if debug:
-                print(f'Invalid state transition (equal magnitudes, different gradients): {state_1} --> {state_2}')
-            return False
-        elif state_1[5] != state_2[5]:
-            if debug:
-                print(f'Invalid state transition (equal magnitudes, different gradients): {state_1} --> {state_2}')
-            return False
-
-    # validate the state transition, based on the given dependencies
-    # I+(Inflow, Volume)
-    # if state_1[0] == '+':  # positive inflow state_1
-    #     if state_1[4] == '0':  # 0 outflow state_1
-    #         if state_2[3] != '+':  # no positive volume gradient state_2
-    #             if debug:
-    #                 print(f'Invalid state transition (I+(Inflow, Volume), positive inflow): {state_1} --> {state_2}')
-    #             return False
-    # elif state_1[0] == '0':  # 0 inflow state_1
-    #     if state_1[4] == '0':  # 0 outflow state_1
-    #         if state_2[3] != '0':  # no 0 volume gradient state_2
-    #             if debug:
-    #                 print(f'Invalid state transition (I+(Inflow, Volume), 0 inflow): {state_1} --> {state_2}')
-    #             return False
-
-    # # I-(Outflow, Volume)
-    # if state_1[4] == '+':  # positive outflow state_1
-    #     if state_1[0] == '0':  # 0 inflow state_1
-    #         if state_2[3] != '-':  # no negative volume gradient state_2
-    #             if debug:
-    #                 print(f'Invalid state transition (I-(Outflow, Volume), positive outflow): {state_1} --> {state_2}')
-    #             return False
-    # elif state_1[4] == 'max':  # max outflow state_1
-    #     if state_1[0] == '0':  # 0 inflow state_1
-    #         if state_2[3] != '-':  # no negative volume gradient state_2
-    #             if debug:
-    #                 print(f'Invalid state transition (I-(Outflow, Volume), max outflow, 0 inflow): {state_1} --> {state_2}')
-    #             return False
-    #     elif state_1[0] == '+':  # positive inflow state_1
-    #         if state_2[3] != '-':  # no negative volume gradient state_2
-    #             if debug:
-    #                 print(f'Invalid state transition (I-(Outflow, Volume), max outflow, positive inflow): {state_1} --> {state_2}')
-    #             return False
-
-    # validate that state_1 and state_2 can only be equal if state_1 has a non-zero gradient for an interval magnitude
-    if state_1 == state_2:
-        if state_1[1] != '0':  # non-zero inflow gradient state_1
-            if state_1[0] != '+':  # non-interval inflow state_1
-                if debug:
-                    print(f'Invalid state transition (non-zero inflow gradient, non-interval inflow): {state_1} --> {state_2}')
-                return False
-        if state_1[3] != '0':  # non-zero volume gradient state_1
-            if state_1[2] != '+':  # non-interval volume state_1
-                if debug:
-                    print(f'Invalid state transition (non-zero volume gradient, non-interval volume): {state_1} --> {state_2}')
-                return False
-        elif state_1[5] != '0':  # non-zero outflow gradient state_1
-            if state_1[4] != '+':  # non-interval outflow state_1
-                if debug:
-                    print(f'Invalid state transition (non-zero outflow gradient, non-interval outflow): {state_1} --> {state_2}')
-                return False
-        else:
-            return False
-
-    return True
-
-
 def get_state_representation(state):
     """
     Get the representation of the state in human-readable form.
@@ -460,6 +314,42 @@ def get_state_representation(state):
     :returns: the representation of the state
     """
     return f'State {state[6]}\nInflow: [{state[0]}, {state[1]}]\nVolume: [{state[2]}, {state[3]}]\nOutflow: [{state[4]}, {state[5]}]'
+
+
+def trace(state_transition):
+    """
+    Get the inter-state trace of a state-transition.
+
+    :param state_transition: the state-transition
+    :returns: the inter-state trace of the state-transition
+    """
+    state_1, state_2 = state_transition
+
+    out_str = ''
+
+    # erratic behaviour of the tap and its rammifications
+    if state_1[0] == state_2[0] and state_1[1] != state_2[1]:
+        out_str += 'E+'
+    elif state_1[2] == state_2[2] and state_1[3] != state_2[3]:
+        if state_1[0] == state_2[0] and state_1[4] == state_2[4]:
+            out_str += 'E+'
+    elif state_1[4] == state_2[4] and state_1[5] != state_2[5]:
+        if state_2[3] != state_2[5]:
+            out_str += 'E+'
+    
+    # interval
+    if (state_1[2:6] == state_2[2:6]):
+        out_str += 'I+'
+
+    # magnitude change due to derivative
+    if state_1[0] != state_2[0]:
+        out_str += 'D+'
+    elif state_1[2] != state_2[2]:
+        out_str += 'D+'
+    elif state_1[4] != state_2[4]:
+        out_str += 'D+'
+    
+    return out_str[:-1]
 
 
 def create_state_transition_graph(states, state_transitions):
@@ -481,8 +371,20 @@ def create_state_transition_graph(states, state_transitions):
         state_1, state_2 = state_transition
         representation_1 = get_state_representation(state_1)
         representation_2 = get_state_representation(state_2)
-        graph.add_edge(representation_1, representation_2)
+        trace_label = trace(state_transition)
+        graph.add_edge(representation_1, representation_2, label=trace_label)
 
     graph.write('./Output/graph.dot')
     graph.draw('./Output/graph.svg', prog='dot')
     graph.draw('./Output/graph.png', prog='dot')
+
+    # remove any inconsequential states
+    for node in graph.nodes():
+        in_edges = list(graph.iterinedges(node))
+
+        if len(in_edges) == 0:  # no incoming edges, so never reached
+            graph.remove_node(node)
+
+    graph.write('./Output/graph_2.dot')
+    graph.draw('./Output/graph_2.svg', prog='dot')
+    graph.draw('./Output/graph_2.png', prog='dot')

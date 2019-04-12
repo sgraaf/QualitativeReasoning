@@ -142,6 +142,19 @@ def is_valid_state(state, debug_states):
     return True
 
 
+def id_states(states):
+    """
+    Give the states an numeric ID.
+
+    :param states: a list of states
+    :returns: a list of states, with numeric IDs at the last index
+    """
+    id_states = []
+    for i in range(len(states)):
+        id_states.append(states[i] + (i + 1,))
+    return id_states
+
+
 def is_valid_transition(state_transition, debug_state_transitions):
     """
     Determine if a given state transition is valid or not, given the dependencies and assumptions.
@@ -446,7 +459,7 @@ def get_state_representation(state):
     :param state: the state
     :returns: the representation of the state
     """
-    return f'Inflow: [{state[0]}, {state[1]}]\nVolume: [{state[2]}, {state[3]}]\nOutflow: [{state[4]}, {state[5]}]'
+    return f'State {state[6]}\nInflow: [{state[0]}, {state[1]}]\nVolume: [{state[2]}, {state[3]}]\nOutflow: [{state[4]}, {state[5]}]'
 
 
 def create_state_transition_graph(states, state_transitions):
@@ -462,8 +475,7 @@ def create_state_transition_graph(states, state_transitions):
         splines=True, 
         sep=+0.5, 
         normalize=True, 
-        smoothing='avg_dist', 
-        label='State-transition graph of the qualitative model')
+        smoothing='avg_dist')
     
     for state_transition in state_transitions:
         state_1, state_2 = state_transition

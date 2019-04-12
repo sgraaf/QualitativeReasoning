@@ -23,6 +23,9 @@ valid_states = [state for state in states if is_valid_state(state, debug_states)
 valid_states_len = len(valid_states)
 print(f'Step 2: Removed {states_len - valid_states_len} invalid states, there are {valid_states_len} valid states remaining')
 
+# Step 2a: Give all states an ID
+valid_states = id_states(valid_states)
+
 # Step 3: (Over)generate state-transitions
 state_transitions = list(product(valid_states, repeat=2))
 transitions_len = len(state_transitions)

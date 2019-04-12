@@ -1,384 +1,533 @@
 strict digraph "" {
-	graph [label="State-transition graph of the qualitative model",
-		normalize=True,
+	graph [normalize=True,
 		overlap=False,
 		sep=0.5,
 		smoothing=avg_dist,
 		splines=True
 	];
-	"Inflow: [0, 0]
+	"State 1
+Inflow: [0, 0]
 Volume: [0, 0]
-Outflow: [0, 0]" -> "Inflow: [0, 0]
-Volume: [0, 0]
-Outflow: [0, 0]";
-	"Inflow: [0, 0]
-Volume: [0, 0]
-Outflow: [0, 0]" -> "Inflow: [0, +]
+Outflow: [0, 0]" -> "State 1
+Inflow: [0, 0]
 Volume: [0, 0]
 Outflow: [0, 0]";
-	"Inflow: [0, +]
+	"State 1
+Inflow: [0, 0]
 Volume: [0, 0]
-Outflow: [0, 0]" -> "Inflow: [+, 0]
+Outflow: [0, 0]" -> "State 5
+Inflow: [0, +]
+Volume: [0, 0]
+Outflow: [0, 0]";
+	"State 5
+Inflow: [0, +]
+Volume: [0, 0]
+Outflow: [0, 0]" -> "State 15
+Inflow: [+, 0]
 Volume: [0, +]
 Outflow: [0, +]";
-	"Inflow: [0, 0]
+	"State 2
+Inflow: [0, 0]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [0, 0]
+Outflow: [+, -]" -> "State 1
+Inflow: [0, 0]
 Volume: [0, 0]
 Outflow: [0, 0]";
-	"Inflow: [0, 0]
+	"State 2
+Inflow: [0, 0]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [0, +]
+Outflow: [+, -]" -> "State 5
+Inflow: [0, +]
 Volume: [0, 0]
 Outflow: [0, 0]";
-	"Inflow: [0, 0]
+	"State 2
+Inflow: [0, 0]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [0, 0]
-Volume: [+, -]
-Outflow: [+, -]";
-	"Inflow: [0, 0]
-Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [0, 0]
-Volume: [+, 0]
-Outflow: [0, 0]";
-	"Inflow: [0, 0]
-Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [0, +]
+Outflow: [+, -]" -> "State 2
+Inflow: [0, 0]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [0, 0]
+	"State 2
+Inflow: [0, 0]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [0, +]
+Outflow: [+, -]" -> "State 3
+Inflow: [0, 0]
 Volume: [+, 0]
 Outflow: [0, 0]";
-	"Inflow: [0, 0]
-Volume: [+, 0]
-Outflow: [0, 0]" -> "Inflow: [0, 0]
-Volume: [+, 0]
-Outflow: [0, 0]";
-	"Inflow: [0, 0]
-Volume: [+, 0]
-Outflow: [0, 0]" -> "Inflow: [0, +]
-Volume: [+, 0]
-Outflow: [0, 0]";
-	"Inflow: [0, +]
+	"State 2
+Inflow: [0, 0]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [+, 0]
+Outflow: [+, -]" -> "State 6
+Inflow: [0, +]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [0, +]
+	"State 2
+Inflow: [0, 0]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [+, 0]
+Outflow: [+, -]" -> "State 7
+Inflow: [0, +]
+Volume: [+, 0]
+Outflow: [0, 0]";
+	"State 3
+Inflow: [0, 0]
+Volume: [+, 0]
+Outflow: [0, 0]" -> "State 3
+Inflow: [0, 0]
+Volume: [+, 0]
+Outflow: [0, 0]";
+	"State 3
+Inflow: [0, 0]
+Volume: [+, 0]
+Outflow: [0, 0]" -> "State 7
+Inflow: [0, +]
+Volume: [+, 0]
+Outflow: [0, 0]";
+	"State 6
+Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "State 16
+Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"State 6
+Inflow: [0, +]
+Volume: [+, -]
+Outflow: [+, -]" -> "State 17
+Inflow: [+, 0]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [0, +]
+	"State 7
+Inflow: [0, +]
 Volume: [+, 0]
-Outflow: [0, 0]" -> "Inflow: [+, 0]
+Outflow: [0, 0]" -> "State 18
+Inflow: [+, 0]
 Volume: [+, +]
 Outflow: [0, +]";
-	"Inflow: [0, 0]
+	"State 4
+Inflow: [0, 0]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [0, 0]
+Outflow: [max, -]" -> "State 2
+Inflow: [0, 0]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [0, 0]
+	"State 4
+Inflow: [0, 0]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [0, +]
+Outflow: [max, -]" -> "State 6
+Inflow: [0, +]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [+, 0]
+	"State 15
+Inflow: [+, 0]
 Volume: [0, +]
-Outflow: [0, +]" -> "Inflow: [+, 0]
+Outflow: [0, +]" -> "State 17
+Inflow: [+, 0]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, 0]
+	"State 15
+Inflow: [+, 0]
 Volume: [0, +]
-Outflow: [0, +]" -> "Inflow: [+, -]
+Outflow: [0, +]" -> "State 11
+Inflow: [+, -]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, 0]
+	"State 15
+Inflow: [+, 0]
 Volume: [0, +]
-Outflow: [0, +]" -> "Inflow: [+, -]
+Outflow: [0, +]" -> "State 13
+Inflow: [+, -]
 Volume: [+, +]
 Outflow: [+, +]";
-	"Inflow: [+, 0]
+	"State 15
+Inflow: [+, 0]
 Volume: [0, +]
-Outflow: [0, +]" -> "Inflow: [+, 0]
+Outflow: [0, +]" -> "State 19
+Inflow: [+, 0]
 Volume: [+, +]
 Outflow: [+, +]";
-	"Inflow: [+, 0]
+	"State 16
+Inflow: [+, 0]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [+, 0]
+Outflow: [+, -]" -> "State 16
+Inflow: [+, 0]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [+, 0]
+	"State 16
+Inflow: [+, 0]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [+, 0]
+Outflow: [+, -]" -> "State 17
+Inflow: [+, 0]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, 0]
+	"State 16
+Inflow: [+, 0]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [+, -]
+Outflow: [+, -]" -> "State 11
+Inflow: [+, -]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, 0]
+	"State 16
+Inflow: [+, 0]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [+, -]
-Volume: [+, -]
-Outflow: [+, -]";
-	"Inflow: [+, 0]
-Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [+, 0]
-Volume: [+, -]
-Outflow: [+, -]";
-	"Inflow: [+, 0]
-Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [+, 0]
-Volume: [+, 0]
-Outflow: [+, 0]";
-	"Inflow: [+, 0]
-Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [+, -]
-Volume: [+, 0]
-Outflow: [+, 0]";
-	"Inflow: [+, 0]
-Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [+, -]
-Volume: [+, +]
-Outflow: [+, +]";
-	"Inflow: [+, 0]
-Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [+, 0]
-Volume: [+, +]
-Outflow: [+, +]";
-	"Inflow: [+, 0]
-Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [+, -]
+Outflow: [+, -]" -> "State 10
+Inflow: [+, -]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [+, 0]
-Volume: [+, +]
-Outflow: [0, +]" -> "Inflow: [+, 0]
+	"State 17
+Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]" -> "State 16
+Inflow: [+, 0]
+Volume: [+, -]
+Outflow: [+, -]";
+	"State 17
+Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]" -> "State 17
+Inflow: [+, 0]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, 0]
-Volume: [+, +]
-Outflow: [0, +]" -> "Inflow: [+, -]
+	"State 17
+Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]" -> "State 11
+Inflow: [+, -]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, 0]
-Volume: [+, +]
-Outflow: [0, +]" -> "Inflow: [+, -]
-Volume: [+, +]
-Outflow: [+, +]";
-	"Inflow: [+, 0]
-Volume: [+, +]
-Outflow: [0, +]" -> "Inflow: [+, 0]
+	"State 17
+Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]" -> "State 13
+Inflow: [+, -]
 Volume: [+, +]
 Outflow: [+, +]";
-	"Inflow: [0, +]
+	"State 17
+Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]" -> "State 19
+Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]";
+	"State 17
+Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]" -> "State 10
+Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]";
+	"State 18
+Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [0, +]" -> "State 17
+Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"State 18
+Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [0, +]" -> "State 11
+Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"State 18
+Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [0, +]" -> "State 13
+Inflow: [+, -]
+Volume: [+, +]
+Outflow: [+, +]";
+	"State 18
+Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [0, +]" -> "State 19
+Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]";
+	"State 8
+Inflow: [0, +]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [+, 0]
+Outflow: [max, -]" -> "State 16
+Inflow: [+, 0]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [0, +]
+	"State 8
+Inflow: [0, +]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [+, 0]
+Outflow: [max, -]" -> "State 17
+Inflow: [+, 0]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, -]
+	"State 9
+Inflow: [+, -]
 Volume: [0, +]
-Outflow: [0, +]" -> "Inflow: [+, 0]
+Outflow: [0, +]" -> "State 17
+Inflow: [+, 0]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, -]
+	"State 9
+Inflow: [+, -]
 Volume: [0, +]
-Outflow: [0, +]" -> "Inflow: [+, -]
+Outflow: [0, +]" -> "State 11
+Inflow: [+, -]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, -]
+	"State 9
+Inflow: [+, -]
 Volume: [0, +]
-Outflow: [0, +]" -> "Inflow: [+, -]
+Outflow: [0, +]" -> "State 13
+Inflow: [+, -]
 Volume: [+, +]
 Outflow: [+, +]";
-	"Inflow: [+, -]
+	"State 9
+Inflow: [+, -]
 Volume: [0, +]
-Outflow: [0, +]" -> "Inflow: [+, 0]
+Outflow: [0, +]" -> "State 19
+Inflow: [+, 0]
 Volume: [+, +]
 Outflow: [+, +]";
-	"Inflow: [+, -]
+	"State 11
+Inflow: [+, -]
 Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [0, 0]
+Outflow: [+, 0]" -> "State 2
+Inflow: [0, 0]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [+, -]
+	"State 11
+Inflow: [+, -]
 Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [+, 0]
+Outflow: [+, 0]" -> "State 16
+Inflow: [+, 0]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [+, -]
+	"State 11
+Inflow: [+, -]
 Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [+, 0]
-Volume: [+, 0]
-Outflow: [+, 0]";
-	"Inflow: [+, -]
-Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [+, -]
+Outflow: [+, 0]" -> "State 17
+Inflow: [+, 0]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, -]
+	"State 11
+Inflow: [+, -]
 Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [+, -]
+Outflow: [+, 0]" -> "State 11
+Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"State 11
+Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]" -> "State 13
+Inflow: [+, -]
 Volume: [+, +]
 Outflow: [+, +]";
-	"Inflow: [+, -]
+	"State 11
+Inflow: [+, -]
 Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [+, 0]
+Outflow: [+, 0]" -> "State 19
+Inflow: [+, 0]
 Volume: [+, +]
 Outflow: [+, +]";
-	"Inflow: [+, -]
+	"State 11
+Inflow: [+, -]
 Volume: [+, 0]
-Outflow: [+, 0]" -> "Inflow: [+, -]
+Outflow: [+, 0]" -> "State 10
+Inflow: [+, -]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [+, -]
+	"State 13
+Inflow: [+, -]
 Volume: [+, +]
-Outflow: [+, +]" -> "Inflow: [+, 0]
+Outflow: [+, +]" -> "State 17
+Inflow: [+, 0]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, -]
+	"State 13
+Inflow: [+, -]
 Volume: [+, +]
-Outflow: [+, +]" -> "Inflow: [+, -]
+Outflow: [+, +]" -> "State 11
+Inflow: [+, -]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, -]
+	"State 13
+Inflow: [+, -]
 Volume: [+, +]
-Outflow: [+, +]" -> "Inflow: [+, -]
-Volume: [+, +]
-Outflow: [+, +]";
-	"Inflow: [+, -]
-Volume: [+, +]
-Outflow: [+, +]" -> "Inflow: [+, 0]
+Outflow: [+, +]" -> "State 13
+Inflow: [+, -]
 Volume: [+, +]
 Outflow: [+, +]";
-	"Inflow: [+, 0]
+	"State 13
+Inflow: [+, -]
 Volume: [+, +]
-Outflow: [+, +]" -> "Inflow: [+, 0]
+Outflow: [+, +]" -> "State 19
+Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]";
+	"State 19
+Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]" -> "State 17
+Inflow: [+, 0]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, 0]
+	"State 19
+Inflow: [+, 0]
 Volume: [+, +]
-Outflow: [+, +]" -> "Inflow: [+, -]
+Outflow: [+, +]" -> "State 11
+Inflow: [+, -]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, 0]
+	"State 19
+Inflow: [+, 0]
 Volume: [+, +]
-Outflow: [+, +]" -> "Inflow: [+, -]
-Volume: [+, +]
-Outflow: [+, +]";
-	"Inflow: [+, 0]
-Volume: [+, +]
-Outflow: [+, +]" -> "Inflow: [+, 0]
+Outflow: [+, +]" -> "State 13
+Inflow: [+, -]
 Volume: [+, +]
 Outflow: [+, +]";
-	"Inflow: [+, -]
+	"State 19
+Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]" -> "State 19
+Inflow: [+, 0]
+Volume: [+, +]
+Outflow: [+, +]";
+	"State 10
+Inflow: [+, -]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [0, 0]
+Outflow: [+, -]" -> "State 1
+Inflow: [0, 0]
 Volume: [0, 0]
 Outflow: [0, 0]";
-	"Inflow: [+, -]
+	"State 10
+Inflow: [+, -]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [0, 0]
+Outflow: [+, -]" -> "State 2
+Inflow: [0, 0]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [+, -]
+	"State 10
+Inflow: [+, -]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [0, 0]
+Outflow: [+, -]" -> "State 3
+Inflow: [0, 0]
 Volume: [+, 0]
 Outflow: [0, 0]";
-	"Inflow: [+, -]
+	"State 10
+Inflow: [+, -]
 Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [+, 0]
-Volume: [+, -]
-Outflow: [+, -]";
-	"Inflow: [+, -]
-Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [+, 0]
-Volume: [+, 0]
-Outflow: [+, 0]";
-	"Inflow: [+, -]
-Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [+, -]
-Volume: [+, 0]
-Outflow: [+, 0]";
-	"Inflow: [+, -]
-Volume: [+, -]
-Outflow: [+, -]" -> "Inflow: [+, -]
+Outflow: [+, -]" -> "State 16
+Inflow: [+, 0]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [+, -]
-Volume: [+, +]
-Outflow: [0, +]" -> "Inflow: [+, 0]
+	"State 10
+Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]" -> "State 17
+Inflow: [+, 0]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, -]
-Volume: [+, +]
-Outflow: [0, +]" -> "Inflow: [+, -]
+	"State 10
+Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]" -> "State 11
+Inflow: [+, -]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, -]
+	"State 10
+Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]" -> "State 10
+Inflow: [+, -]
+Volume: [+, -]
+Outflow: [+, -]";
+	"State 12
+Inflow: [+, -]
 Volume: [+, +]
-Outflow: [0, +]" -> "Inflow: [+, -]
+Outflow: [0, +]" -> "State 17
+Inflow: [+, 0]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"State 12
+Inflow: [+, -]
+Volume: [+, +]
+Outflow: [0, +]" -> "State 11
+Inflow: [+, -]
+Volume: [+, 0]
+Outflow: [+, 0]";
+	"State 12
+Inflow: [+, -]
+Volume: [+, +]
+Outflow: [0, +]" -> "State 13
+Inflow: [+, -]
 Volume: [+, +]
 Outflow: [+, +]";
-	"Inflow: [+, -]
+	"State 12
+Inflow: [+, -]
 Volume: [+, +]
-Outflow: [0, +]" -> "Inflow: [+, 0]
+Outflow: [0, +]" -> "State 19
+Inflow: [+, 0]
 Volume: [+, +]
 Outflow: [+, +]";
-	"Inflow: [+, -]
+	"State 14
+Inflow: [+, -]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [0, 0]
+Outflow: [max, -]" -> "State 2
+Inflow: [0, 0]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [+, -]
+	"State 14
+Inflow: [+, -]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [+, 0]
+Outflow: [max, -]" -> "State 16
+Inflow: [+, 0]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [+, -]
+	"State 14
+Inflow: [+, -]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [+, 0]
+Outflow: [max, -]" -> "State 17
+Inflow: [+, 0]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, -]
+	"State 14
+Inflow: [+, -]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [+, -]
+Outflow: [max, -]" -> "State 11
+Inflow: [+, -]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, -]
+	"State 14
+Inflow: [+, -]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [+, -]
+Outflow: [max, -]" -> "State 10
+Inflow: [+, -]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [+, 0]
+	"State 20
+Inflow: [+, 0]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [+, 0]
+Outflow: [max, -]" -> "State 16
+Inflow: [+, 0]
 Volume: [+, -]
 Outflow: [+, -]";
-	"Inflow: [+, 0]
+	"State 20
+Inflow: [+, 0]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [+, 0]
+Outflow: [max, -]" -> "State 17
+Inflow: [+, 0]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, 0]
+	"State 20
+Inflow: [+, 0]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [+, -]
+Outflow: [max, -]" -> "State 11
+Inflow: [+, -]
 Volume: [+, 0]
 Outflow: [+, 0]";
-	"Inflow: [+, 0]
+	"State 20
+Inflow: [+, 0]
 Volume: [max, -]
-Outflow: [max, -]" -> "Inflow: [+, -]
+Outflow: [max, -]" -> "State 10
+Inflow: [+, -]
 Volume: [+, -]
 Outflow: [+, -]";
 }
